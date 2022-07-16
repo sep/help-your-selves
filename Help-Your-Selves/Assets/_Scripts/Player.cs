@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    private GameMap map;
     
     private void Awake()
     {
-        this.rb = GetComponent<Rigidbody2D>();
+        this.map = GameMap.getInstance();
+        this.map.registerPlayer(this);
     }
 
     // Start is called before the first frame update
@@ -20,23 +21,34 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 vec = new Vector3(0f, 0f, 0f);
+        Vector2 vec = this.transform.position;
         if (Input.GetKeyDown("right"))
         {
-            vec.x = 1f;
+            vec.x += 1f;
         }
         else if (Input.GetKeyDown("left"))
         {
-           vec.x = -1f;
+           vec.x += -1f;
         }
         else if (Input.GetKeyDown("up"))
         {
-            vec.y = 1f;      }
+            vec.y += 1f;      }
 
         else if (Input.GetKeyDown("down"))
         {
-            vec.y = -1f;
+            vec.y += -1f;
         }
-        this.transform.position += vec;
+        IBlock block = this.map.getBlock((int) vec.x, (int) vec.y);
+        if(block == null || block.move(this)){
+            this.transform.position = vec;
+        }
+    }
+
+    public int getX(){
+        return (int) this.transform.position.x;
+    }
+
+    public int getY(){
+        return (int) this.transform.position.y;
     }
 }
