@@ -29,9 +29,9 @@ public class GameMap
         return instance;
     }
 
-    public void registerBlock(IBlock block){
-        int x = block.getX();
-        int y = block.getY();
+    public void registerBlock(IBlock block, int x = -1, int y = -1){
+        x = x == -1 ? block.getX() : x;
+        y = y == -1 ? block.getY() : y;
 
         if(!isEmpty(x, y)) Debug.LogError("Register block on taken position");
 

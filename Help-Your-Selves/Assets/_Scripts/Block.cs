@@ -14,18 +14,19 @@ public class Block : MonoBehaviour, IBlock
     }
 
     public bool move(Player p) {
-        if (p.color != this.color) return false;
-        int px = p.getX();
-        int py = p.getY();
-        int dx = (this.getX() - px);
-        int dy = (this.getY() - py);
-        int x = this.getX() + dx;
-        int y = this.getY() + dy;
-        if(this.map.isEmpty(x, y)){
-            this.map.unregisterPosition(this.getX(), this.getY());
-            this.transform.position += new Vector3(dx,dy, 0);
-            this.map.registerBlock(this);
-            return true;
+        if (p.color == this.color || this.color == 0) {
+            int px = p.getX();
+            int py = p.getY();
+            int dx = (this.getX() - px);
+            int dy = (this.getY() - py);
+            int x = this.getX() + dx;
+            int y = this.getY() + dy;
+            if(this.map.isEmpty(x, y)){
+                this.map.unregisterPosition(this.getX(), this.getY());
+                this.transform.position += new Vector3(dx,dy, 0);
+                this.map.registerBlock(this);
+                return true;
+            }
         }
         return false;
     }
