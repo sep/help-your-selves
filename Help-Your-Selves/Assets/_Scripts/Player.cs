@@ -5,11 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private GameMap map;
+    public int color;
     
     private void Awake()
     {
         this.map = GameMap.getInstance();
         this.map.registerPlayer(this);
+        this.color = 1;
     }
 
     // Start is called before the first frame update
