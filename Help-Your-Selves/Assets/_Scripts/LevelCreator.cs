@@ -10,9 +10,11 @@ public class LevelCreator : MonoBehaviour
     public GameObject block;
     public GameObject mirror;
     public GameObject victoryMenuUI;
+    public GameObject wonUI;
     public GameObject goal;
     private GameMap map;
     private int currentLevel;
+    private int maxLevel = 6;
 
     private ArrayList objectList;
 
@@ -42,6 +44,11 @@ public class LevelCreator : MonoBehaviour
 
     private void hideVictory(){
         victoryMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    private void showWon(){
+        wonUI.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -98,6 +105,7 @@ public class LevelCreator : MonoBehaviour
 
     public void nextLevel(){
         this.currentLevel += 1;
+        if(currentLevel > maxLevel) showWon();
         clear();
         createLevel(currentLevel);
         hideVictory();
