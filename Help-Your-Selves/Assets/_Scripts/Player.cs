@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int playerID;
+    [SerializeField] public int playerID = 0;
     private GameMap map;
     
     public int color;
@@ -64,6 +64,15 @@ public class Player : MonoBehaviour
         IBlock block = this.map.getBlock((int) vec.x, (int) vec.y);
         if(block == null || block.move(this)){
             this.transform.position = vec;
+        }
+    }
+
+    public void changeColor(int i){
+        SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
+        switch(i){
+            case 1: sprite.color = new Color(52,223,28); break;
+            case 2: sprite.color = new Color(233,26,38); break;
+            default: sprite.color = new Color(255,255,255); break;
         }
     }
 
