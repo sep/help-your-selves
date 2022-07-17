@@ -24,6 +24,9 @@ public class LevelCreator : MonoBehaviour
     }
 
     private void Update(){
+        if(Input.GetKeyDown("r")){
+            restart();
+        }
         if(map.isPlayerOnGoal(0) && map.isPlayerOnGoal(1)){
             nextLevel();
         }
@@ -76,6 +79,11 @@ public class LevelCreator : MonoBehaviour
 
     public void nextLevel(){
         this.currentLevel += 1;
+        clear();
+        createLevel(currentLevel);
+    }
+
+    private void restart(){
         clear();
         createLevel(currentLevel);
     }
