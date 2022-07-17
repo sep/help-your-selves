@@ -19,7 +19,7 @@ public class LevelCreator : MonoBehaviour
     void Start(){
         this.map = GameMap.getInstance();
         this.objectList = new ArrayList();
-        this.currentLevel = 1;
+        this.currentLevel = 3;
         createLevel(currentLevel);
     }
 
@@ -39,7 +39,6 @@ public class LevelCreator : MonoBehaviour
         foreach(Item i in level.Mirrors){
             createMirror(i.x, i.y, i.color);
         }
-        Debug.Log(level.Blocks);
         foreach(Item i in level.Blocks){
             createBlock(this.block, i.x, i.y, i.color);
         }
@@ -59,6 +58,7 @@ public class LevelCreator : MonoBehaviour
     void createMirror(int x, int y, int color){
         GameObject block = Instantiate(mirror, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
         MirroredBlock m = block.GetComponent<MirroredBlock>();
+        m.changeColor(color);
         m.setColor(color);
         this.objectList.Add(block);
     }
