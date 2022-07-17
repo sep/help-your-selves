@@ -13,15 +13,20 @@ public class LevelCreator : MonoBehaviour
     public Player player;
     // Start is called before the first frame update
     void Start(){
+        createLevel(1);
+    }
+
+    void createLevel(int levelNum){
         createPerimeter();
-        createPlayer(2,16,0,1);
-        createPlayer(18,16,1,2);
-        JSON thing = objectFromJson("./Assets/LevelFiles/level1.json");
-        Debug.Log(thing);
-        foreach(JSON i in thing.Blocks){
+        JSON level = objectFromJson($"./Assets/LevelFiles/level{levelNum}.json");
+        foreach(Item i in level.Mirrors){
             Debug.Log($"{i.x}, {i.y}");
-            createBlock(block, i.x, i.y);
+            createBlock(mirror, i.x, i.y);
         }
+        Item p1 = level.player1;
+        Item p2 = level.player2;
+        createPlayer(p1.x,p1.y,p1.id,p1.color);
+        createPlayer(p2.x,p2.y,p2.id,p2.color);
     }
 
     void createBlock(GameObject obj, int x, int y){
@@ -47,32 +52,24 @@ public class LevelCreator : MonoBehaviour
         }
     }
 
-    private (int x, int y)[] perimeter = new (int x, int y)[] {
-
-    };
-
     private JSON objectFromJson(string filename){
-        JObject obj;
-        Debug.Log("Here");
+        JSON obj;
         using (StreamReader r = new StreamReader(filename)){
-            string json = r.ReadToEnd();
-            Debug.Log(json);
-            obj = JToken.ReadFrom(json);
-            Debug.Log($"Here \n{obj.player1.x}");
+            JsonSerializer serializer = new JsonSerializer();
+            obj = (JSON)serializer.Deserialize(r, typeof(JSON));
             return obj;
         }
     }
 
-    JsonSerializer serializer = new JsonSerializer();
-
     private class JSON{
-        public JSON[] Blocks;
-        public JSON player1;
-        object player2;
+        public Item[] Mirrors;
+        public Item[] Blocks;
+        public Item player1;
+        public Item player2;
         public int x,y,color;
     }
 
     public class Item{
-        public int x,y,color;
+        public int x,y,color,id;
     }
 }
