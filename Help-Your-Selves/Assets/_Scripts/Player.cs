@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         }
         if(!moving) return;
         IBlock block = this.map.getBlock((int) vec.x, (int) vec.y);
+        Debug.Log(block);
         if(block == null || block.move(this)){
             this.transform.position = vec;
         }
