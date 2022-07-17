@@ -9,6 +9,8 @@ public class LevelCreator : MonoBehaviour
     public GameObject wall;
     public GameObject block;
     public GameObject mirror;
+    public GameObject victoryMenuUI;
+    public GameObject goal;
     private GameMap map;
     private int currentLevel;
 
@@ -21,6 +23,7 @@ public class LevelCreator : MonoBehaviour
         this.objectList = new ArrayList();
         this.currentLevel = 1;
         createLevel(currentLevel);
+        victoryMenuUI.SetActive(false);
     }
 
     private void Update(){
@@ -28,8 +31,18 @@ public class LevelCreator : MonoBehaviour
             restart();
         }
         if(map.isPlayerOnGoal(0) && map.isPlayerOnGoal(1)){
-            nextLevel();
+            showVictory();
         }
+    }
+
+    public void showVictory(){
+        victoryMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    private void hideVictory(){
+        victoryMenuUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     void createLevel(int levelNum){
@@ -78,6 +91,7 @@ public class LevelCreator : MonoBehaviour
         for(int i = 1; i < 18; i++){
             createBlock(wall, 0, i, -1);
             if(i != goal) createBlock(wall, 16, i, -1);
+            else Instantiate(this.goal, new Vector3(16.5f, i + .5f, 0), Quaternion.identity);
             createBlock(wall, 32, i, -1);
         }
     }
@@ -86,6 +100,7 @@ public class LevelCreator : MonoBehaviour
         this.currentLevel += 1;
         clear();
         createLevel(currentLevel);
+        hideVictory();
     }
 
     private void restart(){
