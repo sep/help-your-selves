@@ -20,7 +20,6 @@ public class LevelCreator : MonoBehaviour
         createPerimeter();
         JSON level = objectFromJson($"./Assets/LevelFiles/level{levelNum}.json");
         foreach(Item i in level.Mirrors){
-            Debug.Log($"{i.x}, {i.y}");
             createBlock(mirror, i.x, i.y);
         }
         Item p1 = level.player1;

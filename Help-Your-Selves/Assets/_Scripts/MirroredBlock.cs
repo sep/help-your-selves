@@ -18,7 +18,6 @@ public class MirroredBlock : MonoBehaviour, IBlock
 
     public bool move(Player p) {
         if (p.color == this.color || this.color == 0) {
-            Debug.Log("Hey");
             int px = p.getX();
             if(px > xOffset) px -= xOffset;
             int py = p.getY();
