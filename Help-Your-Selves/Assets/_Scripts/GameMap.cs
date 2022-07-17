@@ -98,8 +98,8 @@ public class GameMap
     }
 
     public bool isPlayerOnGoal(int player){
-        if(player == 0){ return playerLeft.getX() == goal.x && playerLeft.getY() == goal.y; }
-        else { return playerRight.getX() == goal.x && playerRight.getY() == goal.y; }
+        if(player == 0){ return playerLeft != null && playerLeft.getX() == goal.x && playerLeft.getY() == goal.y; }
+        else { return  playerRight != null && playerRight.getX() == goal.x && playerRight.getY() == goal.y; }
     }
 
     public void reset(){

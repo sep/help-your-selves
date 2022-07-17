@@ -81,9 +81,9 @@ public class Player : MonoBehaviour
     public void changeColor(int i){
         SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
         switch(i){
-            case 1: sprite.color = new Color(52,223,28); break;
-            case 2: sprite.color = new Color(233,26,38); break;
-            default: sprite.color = new Color(255,255,255); break;
+            case 1: sprite.color = Colors.Green; break;
+            case 2: sprite.color = Colors.Red; break;
+            default: sprite.color = Colors.White; break;
         }
     }
 
