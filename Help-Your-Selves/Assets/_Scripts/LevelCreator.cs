@@ -14,7 +14,7 @@ public class LevelCreator : MonoBehaviour
     public GameObject goal;
     private GameMap map;
     private int currentLevel;
-    private int maxLevel = 6;
+    private int maxLevel = 8;
 
     private ArrayList objectList;
 
@@ -26,13 +26,21 @@ public class LevelCreator : MonoBehaviour
         this.currentLevel = 1;
         createLevel(currentLevel);
         victoryMenuUI.SetActive(false);
+        wonUI.SetActive(false);
     }
 
     private void Update(){
         if(Input.GetKeyDown("r")){
             restart();
         }
+        if(Input.GetKeyDown("[")){
+            prevLevel();
+        }
+        if(Input.GetKeyDown("]")){
+            nextLevel();
+        }
         if(map.isPlayerOnGoal(0) && map.isPlayerOnGoal(1)){
+            if(currentLevel >= maxLevel) showWon();
             showVictory();
         }
     }
@@ -42,14 +50,15 @@ public class LevelCreator : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    private void hideVictory(){
+    private void hideAll(){
         victoryMenuUI.SetActive(false);
+        wonUI.SetActive(false);
         Time.timeScale = 1f;
     }
 
     private void showWon(){
-        wonUI.SetActive(false);
-        Time.timeScale = 1f;
+        wonUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     void createLevel(int levelNum){
@@ -98,7 +107,7 @@ public class LevelCreator : MonoBehaviour
         for(int i = 1; i < 18; i++){
             createBlock(wall, 0, i, -1);
             if(i != goal) createBlock(wall, 16, i, -1);
-            else Instantiate(this.goal, new Vector3(16.5f, i + .5f, 0), Quaternion.identity);
+            else objectList.Add(Instantiate(this.goal, new Vector3(16.5f, i + .5f, 0), Quaternion.identity));
             createBlock(wall, 32, i, -1);
         }
     }
@@ -108,7 +117,14 @@ public class LevelCreator : MonoBehaviour
         if(currentLevel > maxLevel) showWon();
         clear();
         createLevel(currentLevel);
-        hideVictory();
+        hideAll();
+    }
+
+    public void prevLevel(){
+        this.currentLevel -= 1;
+        clear();
+        createLevel(currentLevel);
+        hideAll();
     }
 
     private void restart(){
