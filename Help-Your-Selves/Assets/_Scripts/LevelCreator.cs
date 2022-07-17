@@ -19,7 +19,7 @@ public class LevelCreator : MonoBehaviour
     void Start(){
         this.map = GameMap.getInstance();
         this.objectList = new ArrayList();
-        this.currentLevel = 3;
+        this.currentLevel = 1;
         createLevel(currentLevel);
     }
 
