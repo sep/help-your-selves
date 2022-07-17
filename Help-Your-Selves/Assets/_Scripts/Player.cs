@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] public int playerID = 0;
     private GameMap map;
+    private Keys keys;
     
     public int color;
     
@@ -18,49 +19,50 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(playerID == 0){
+            this.keys = new Keys(){
+                up = "w",
+                down = "s",
+                left = "a",
+                right = "d"
+            };
+        }
+        else{
+            this.keys = new Keys(){
+                up = "up",
+                down = "down",
+                left = "left",
+                right = "right"
+            };
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 vec = this.transform.position;
-        if(this.playerID == 0){
-            if (Input.GetKeyDown("d"))
-            {
-                vec.x += 1f;
-            }
-            else if (Input.GetKeyDown("a"))
-            {
-            vec.x += -1f;
-            }
-            else if (Input.GetKeyDown("w"))
-            {
-                vec.y += 1f;      
-            }
-            else if (Input.GetKeyDown("s"))
-            {
-                vec.y += -1f;
-            }
-        }else{
-            if (Input.GetKeyDown("right"))
-            {
-                vec.x += 1f;
-            }
-            else if (Input.GetKeyDown("left"))
-            {
-            vec.x += -1f;
-            }
-            else if (Input.GetKeyDown("up"))
-            {
-                vec.y += 1f;      
-            }
-            else if (Input.GetKeyDown("down"))
-            {
-                vec.y += -1f;
-            }
+        bool moving = false;
+        if (Input.GetKeyDown(keys.right))
+        {
+            vec.x += 1f;
+            moving = true;
         }
-        
+        else if (Input.GetKeyDown(keys.left))
+        {
+            vec.x += -1f;
+            moving = true;
+        }
+        else if (Input.GetKeyDown(keys.up))
+        {
+            vec.y += 1f;
+            moving = true;    
+        }
+        else if (Input.GetKeyDown(keys.down))
+        {
+            vec.y += -1f;
+            moving = true;
+        }
+        if(!moving) return;
         IBlock block = this.map.getBlock((int) vec.x, (int) vec.y);
         if(block == null || block.move(this)){
             this.transform.position = vec;
@@ -82,5 +84,9 @@ public class Player : MonoBehaviour
 
     public int getY(){
         return (int) this.transform.position.y;
+    }
+
+    private class Keys{
+        public string up,down,left,right;
     }
 }
