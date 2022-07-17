@@ -63,11 +63,17 @@ public class Player : MonoBehaviour
             moving = true;
         }
         if(!moving) return;
+        if(playerID == 0){
+            if(vec.x > map.getMiddle() + 1) return;
+        }
+        else{
+            if(vec.x < map.getMiddle()) return;
+        }
         IBlock block = this.map.getBlock((int) vec.x, (int) vec.y);
-        Debug.Log(block);
         if(block == null || block.move(this)){
             this.transform.position = vec;
         }
+
     }
 
     public void changeColor(int i){

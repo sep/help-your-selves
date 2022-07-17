@@ -12,6 +12,7 @@ public class GameMap
     private Player playerRight;
     private int verticalOffset;
     private static int leftOffset = 16;
+    private Vector2 goal;
 
     private GameMap() 
     {
@@ -27,6 +28,10 @@ public class GameMap
             instance = new GameMap();
         }
         return instance;
+    }
+
+    public void registerGoal(int x, int y){
+        this.goal = new Vector2(x,y);
     }
 
     public void registerBlock(IBlock block, int x = -1, int y = -1){
@@ -80,6 +85,8 @@ public class GameMap
         }
     }
 
+    public int getMiddle(){ return leftOffset; }
+
     public bool isEmpty(int x, int y){
         if(x < leftOffset){
             return mapLeft[x, y - verticalOffset] == null && (playerLeft == null || !(x == playerLeft.getX() && y == playerLeft.getY()));
@@ -87,6 +94,11 @@ public class GameMap
         else{
             return mapRight[x - leftOffset, y - verticalOffset] == null  && (playerRight == null || !(x == playerRight.getX() && y == playerRight.getY()));
         }
+    }
+
+    public bool isPlayerOnGoal(int player){
+        if(player == 0){ return playerLeft.getX() == goal.x && playerLeft.getY() == goal.y; }
+        else { return playerRight.getX() == goal.x && playerRight.getY() == goal.y; }
     }
 
 }
