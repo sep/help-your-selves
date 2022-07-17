@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class LevelCreator : MonoBehaviour
 {
@@ -14,6 +16,12 @@ public class LevelCreator : MonoBehaviour
         createPerimeter();
         createPlayer(2,16,0,1);
         createPlayer(18,16,1,2);
+        JSON thing = objectFromJson("./Assets/LevelFiles/level1.json");
+        Debug.Log(thing);
+        foreach(JSON i in thing.Blocks){
+            Debug.Log($"{i.x}, {i.y}");
+            createBlock(block, i.x, i.y);
+        }
     }
 
     void createBlock(GameObject obj, int x, int y){
@@ -42,4 +50,29 @@ public class LevelCreator : MonoBehaviour
     private (int x, int y)[] perimeter = new (int x, int y)[] {
 
     };
+
+    private JSON objectFromJson(string filename){
+        JObject obj;
+        Debug.Log("Here");
+        using (StreamReader r = new StreamReader(filename)){
+            string json = r.ReadToEnd();
+            Debug.Log(json);
+            obj = JToken.ReadFrom(json);
+            Debug.Log($"Here \n{obj.player1.x}");
+            return obj;
+        }
+    }
+
+    JsonSerializer serializer = new JsonSerializer();
+
+    private class JSON{
+        public JSON[] Blocks;
+        public JSON player1;
+        object player2;
+        public int x,y,color;
+    }
+
+    public class Item{
+        public int x,y,color;
+    }
 }

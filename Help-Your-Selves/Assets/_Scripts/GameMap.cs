@@ -81,7 +81,6 @@ public class GameMap
     }
 
     public bool isEmpty(int x, int y){
-        Debug.Log(x);
         if(x < leftOffset){
             return mapLeft[x, y - verticalOffset] == null && (playerLeft == null || !(x == playerLeft.getX() && y == playerLeft.getY()));
         }
