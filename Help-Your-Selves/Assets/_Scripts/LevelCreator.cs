@@ -15,7 +15,7 @@ public class LevelCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         this.map = GameMap.getInstance();
-        createLevel(2);
+        createLevel(1);
     }
 
     private void Update(){
@@ -31,6 +31,10 @@ public class LevelCreator : MonoBehaviour
         foreach(Item i in level.Mirrors){
             createMirror(i.x, i.y, i.color);
         }
+        Debug.Log(level.Blocks);
+        foreach(Item i in level.Blocks){
+            createBlock(this.block, i.x, i.y, i.color);
+        }
         Item p1 = level.player1;
         Item p2 = level.player2;
         createPlayer(p1.x,p1.y,p1.id,p1.color);
@@ -38,7 +42,9 @@ public class LevelCreator : MonoBehaviour
     }
 
     void createBlock(GameObject obj, int x, int y, int color){
-        Instantiate(obj, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
+        GameObject b = Instantiate(obj, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
+        Block m = b.GetComponent<Block>();
+        m.setColor(color);
     }
 
     void createMirror(int x, int y, int color){
