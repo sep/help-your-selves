@@ -1,0 +1,8 @@
+1. Unmoveable maze
+2. some movable blocks
+3. some blocks must be moved by a certain player
+4. "
+5. "
+6. Some unmoveable blocks don't exist on both sides
+7. "
+8. "
