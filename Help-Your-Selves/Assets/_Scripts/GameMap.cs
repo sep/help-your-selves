@@ -70,7 +70,7 @@ public class GameMap
     public IBlock getBlock(int x, int y)
     {
         if(x == leftOffset){
-            return mapRight[x, y - verticalOffset];
+            return mapLeft[x, y - verticalOffset];
         }
         if(x < leftOffset){
             return mapLeft[x, y - verticalOffset];
