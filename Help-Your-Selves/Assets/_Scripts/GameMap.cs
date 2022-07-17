@@ -6,13 +6,21 @@ public class GameMap
 {
     private static GameMap instance;
     //private ArrayList<ArrayList<IBlock>> map;
+    private IBlock[,] mapLeft;
+    private IBlock[,] mapRight;
+    private Player playerLeft;
+    private Player playerRight;
+    private int verticalOffset;
+    private static int leftOffset = 16;
 
     private GameMap() 
     {
-        
+        mapLeft = new IBlock[17,19];
+        mapRight = new IBlock[17,19];
+        verticalOffset = 0;
     }
 
-    public GameMap getInstance()
+    public static GameMap getInstance()
     {
         if(instance == null) 
         {
@@ -21,9 +29,72 @@ public class GameMap
         return instance;
     }
 
-    // public IBlock getBlock(int x, int y)
-    // {
+    public void registerBlock(IBlock block, int x = -1, int y = -1){
+        x = x == -1 ? block.getX() : x;
+        y = y == -1 ? block.getY() : y;
 
-    // }
+        if(!isEmpty(x, y)) Debug.LogError("Register block on taken position");
+
+        if(x == leftOffset){
+            mapRight[x, y - verticalOffset] = block;
+        }
+        if(x < leftOffset){
+            mapLeft[x, y - verticalOffset] = block;
+        }
+        else{
+            mapRight[x - leftOffset, y - verticalOffset] = block;
+        }
+    }
+
+    public void registerPlayer(Player p){
+        int x = p.getX();
+
+        if(!isEmpty(x, p.getY())) Debug.LogError("Register player on taken position");
+
+        if(x < leftOffset){
+            playerLeft = p;
+        }
+        else{
+            playerRight = p;
+        }
+    }
+
+    public void unregisterPosition(int x, int y){
+        if(x == leftOffset){
+            mapRight[x, y - verticalOffset] = null;
+        }
+        if(x < leftOffset){
+            mapLeft[x, y - verticalOffset] = null;
+        }
+        else{
+            mapRight[x - leftOffset, y - verticalOffset] = null;
+        }
+    }
+
+    public IBlock getBlock(int x, int y)
+    {
+        if(x == leftOffset){
+            return mapRight[x, y - verticalOffset];
+        }
+        if(x < leftOffset){
+            return mapLeft[x, y - verticalOffset];
+        }
+        else{
+            return mapRight[x - leftOffset, y - verticalOffset];
+        }
+    }
+
+    public bool isEmpty(int x, int y){
+        Debug.Log(x);
+        if(x == leftOffset){
+            return false;
+        }
+        if(x < leftOffset){
+            return mapLeft[x, y - verticalOffset] == null && (playerLeft == null || !(x == playerLeft.getX() && y == playerLeft.getY()));
+        }
+        else{
+            return mapRight[x - leftOffset, y - verticalOffset] == null  && (playerRight == null || !(x == playerRight.getX() && y == playerRight.getY()));
+        }
+    }
 
 }
