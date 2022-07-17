@@ -39,7 +39,7 @@ public class GameMap
         y = y == -1 ? block.getY() : y;
 
         if(!isEmpty(x, y)) Debug.LogError($"Cannot register block at position ({x}, {y}) occupied by {this.getBlock(x, y)}");
-        if(x < leftOffset){
+        if(x <= leftOffset){
             mapLeft[x, y - verticalOffset] = block;
         }
         else{
@@ -88,6 +88,7 @@ public class GameMap
     public int getMiddle(){ return leftOffset; }
 
     public bool isEmpty(int x, int y){
+        if(x == leftOffset) return mapLeft[x, y - verticalOffset] == null;
         if(x < leftOffset){
             return mapLeft[x, y - verticalOffset] == null && (playerLeft == null || !(x == playerLeft.getX() && y == playerLeft.getY()));
         }

@@ -63,15 +63,17 @@ public class Player : MonoBehaviour
             moving = true;
         }
         if(!moving) return;
-        if(playerID == 0){
-            if(vec.x > map.getMiddle() + 1) return;
-        }
-        else{
-            if(vec.x < map.getMiddle()) return;
-        }
+        
         IBlock block = this.map.getBlock((int) vec.x, (int) vec.y);
         if(block == null || block.move(this)){
-            this.transform.position = vec;
+            if(playerID == 0){
+                if(vec.x > map.getMiddle() + 1) return;
+                this.transform.position = vec;
+            }
+            else{
+                if(vec.x < map.getMiddle()) return;
+                this.transform.position = vec;
+            }
         }
 
     }
