@@ -51,18 +51,10 @@ public class MirroredBlock : MonoBehaviour, IBlock
 
     public void setColor(int color){
         this.color = color;
-    }
-
-    public void changeColor(int i){
         SpriteRenderer[] sprites = this.GetComponentsInChildren<SpriteRenderer>();
-        switch(i){
-            case -1: sprites[1].color = Colors.Gray; sprites[2].color = Colors.Gray; break;
-            case 0: sprites[1].color = Colors.White; sprites[2].color = Colors.White; break;
-            case 1: sprites[1].color = Colors.Green; sprites[2].color = Colors.Green; break;
-            case 2: sprites[1].color = Colors.Red; sprites[2].color = Colors.Red; break;
-            default: sprites[1].color = Colors.White; sprites[2].color = Colors.White; break;
-        }
+        Color c = Colors.getColorById(color);
+        sprites[1].color = c;
+        sprites[2].color = c;
     }
-
 
 }

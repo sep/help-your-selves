@@ -58,7 +58,6 @@ public class LevelCreator : MonoBehaviour
     void createMirror(int x, int y, int color){
         GameObject block = Instantiate(mirror, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
         MirroredBlock m = block.GetComponent<MirroredBlock>();
-        m.changeColor(color);
         m.setColor(color);
         this.objectList.Add(block);
     }
@@ -67,7 +66,7 @@ public class LevelCreator : MonoBehaviour
         Player p = Instantiate(player, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
         p.playerID = id;
         p.color = color;
-        p.changeColor(color);
+        p.setColor(color);
         this.objectList.Add(p.gameObject);
     }
 
