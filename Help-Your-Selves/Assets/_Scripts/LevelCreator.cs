@@ -10,17 +10,22 @@ public class LevelCreator : MonoBehaviour
     public GameObject block;
     public GameObject mirror;
     private GameMap map;
+    private int currentLevel;
+
+    private ArrayList objectList;
 
     public Player player;
     // Start is called before the first frame update
     void Start(){
         this.map = GameMap.getInstance();
-        createLevel(2);
+        this.objectList = new ArrayList();
+        this.currentLevel = 1;
+        createLevel(currentLevel);
     }
 
     private void Update(){
         if(map.isPlayerOnGoal(0) && map.isPlayerOnGoal(1)){
-            Debug.Log("You won");
+            nextLevel();
         }
     }
 
@@ -38,13 +43,15 @@ public class LevelCreator : MonoBehaviour
     }
 
     void createBlock(GameObject obj, int x, int y, int color){
-        Instantiate(obj, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
+        GameObject b = Instantiate(obj, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
+        this.objectList.Add(b);
     }
 
     void createMirror(int x, int y, int color){
         GameObject block = Instantiate(mirror, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
         MirroredBlock m = block.GetComponent<MirroredBlock>();
         m.setColor(color);
+        this.objectList.Add(block);
     }
 
     void createPlayer(int x, int y, int id, int color){
@@ -52,6 +59,7 @@ public class LevelCreator : MonoBehaviour
         p.playerID = id;
         p.color = color;
         p.changeColor(color);
+        this.objectList.Add(p.gameObject);
     }
 
     void createPerimeter(int goal){
@@ -64,6 +72,20 @@ public class LevelCreator : MonoBehaviour
             if(i != goal) createBlock(wall, 16, i, -1);
             createBlock(wall, 32, i, -1);
         }
+    }
+
+    public void nextLevel(){
+        this.currentLevel += 1;
+        clear();
+        createLevel(currentLevel);
+    }
+    
+    private void clear(){
+        map.reset();
+        foreach(GameObject g in objectList){
+            GameObject.Destroy(g);
+        }
+        objectList = new ArrayList();
     }
 
     private JSON objectFromJson(string filename){
