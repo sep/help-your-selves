@@ -45,6 +45,8 @@ public class Block : MonoBehaviour, IBlock
 
     public void setColor(int color){
         this.color = color;
+        SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
+        sprite.color = Colors.getColorById(color);
     }
 
 }
