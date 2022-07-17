@@ -102,4 +102,13 @@ public class GameMap
         else { return playerRight.getX() == goal.x && playerRight.getY() == goal.y; }
     }
 
+    public void reset(){
+        mapLeft = new IBlock[17,19];
+        mapRight = new IBlock[17,19];
+        verticalOffset = 0;
+        playerLeft = null;
+        playerRight = null;
+        // goal = null;
+    }
+
 }

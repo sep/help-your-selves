@@ -43,4 +43,8 @@ public class Block : MonoBehaviour, IBlock
         
     }
 
+    public void setColor(int color){
+        this.color = color;
+    }
+
 }

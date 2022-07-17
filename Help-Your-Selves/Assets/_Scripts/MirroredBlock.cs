@@ -49,4 +49,8 @@ public class MirroredBlock : MonoBehaviour, IBlock
 
     }
 
+    public void setColor(int color){
+        this.color = color;
+    }
+
 }

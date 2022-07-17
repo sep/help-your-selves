@@ -15,7 +15,7 @@ public class LevelCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         this.map = GameMap.getInstance();
-        createLevel(1);
+        createLevel(2);
     }
 
     private void Update(){
@@ -29,7 +29,7 @@ public class LevelCreator : MonoBehaviour
         createPerimeter(level.goal.y);
         map.registerGoal(level.goal.x, level.goal.y);
         foreach(Item i in level.Mirrors){
-            createBlock(mirror, i.x, i.y);
+            createMirror(i.x, i.y, i.color);
         }
         Item p1 = level.player1;
         Item p2 = level.player2;
@@ -37,8 +37,14 @@ public class LevelCreator : MonoBehaviour
         createPlayer(p2.x,p2.y,p2.id,p2.color);
     }
 
-    void createBlock(GameObject obj, int x, int y){
+    void createBlock(GameObject obj, int x, int y, int color){
         Instantiate(obj, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
+    }
+
+    void createMirror(int x, int y, int color){
+        GameObject block = Instantiate(mirror, new Vector3(x + .5f, y + .5f, 0), Quaternion.identity);
+        MirroredBlock m = block.GetComponent<MirroredBlock>();
+        m.setColor(color);
     }
 
     void createPlayer(int x, int y, int id, int color){
@@ -50,13 +56,13 @@ public class LevelCreator : MonoBehaviour
 
     void createPerimeter(int goal){
         for(int i = 0; i < 33; i++){
-            createBlock(wall, i, 0);
-            createBlock(wall, i, 18);
+            createBlock(wall, i, 0, -1);
+            createBlock(wall, i, 18, -1);
         }
         for(int i = 1; i < 18; i++){
-            createBlock(wall, 0, i);
-            if(i != goal) createBlock(wall, 16, i);
-            createBlock(wall, 32, i);
+            createBlock(wall, 0, i, -1);
+            if(i != goal) createBlock(wall, 16, i, -1);
+            createBlock(wall, 32, i, -1);
         }
     }
 

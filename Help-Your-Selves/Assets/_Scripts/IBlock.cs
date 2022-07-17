@@ -5,4 +5,5 @@ public interface IBlock
     public int getX();
 
     public int getY();
+    public void setColor(int color);
 }
