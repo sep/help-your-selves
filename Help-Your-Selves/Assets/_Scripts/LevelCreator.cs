@@ -115,6 +115,7 @@ public class LevelCreator : MonoBehaviour
     }
 
     public void nextLevel(){
+        if (this.currentLevel == this.maxLevel) return;
         this.currentLevel += 1;
         if(currentLevel > maxLevel) showWon();
         clear();
@@ -123,6 +124,7 @@ public class LevelCreator : MonoBehaviour
     }
 
     public void prevLevel(){
+        if (this.currentLevel == 1) return;
         this.currentLevel -= 1;
         clear();
         createLevel(currentLevel);
