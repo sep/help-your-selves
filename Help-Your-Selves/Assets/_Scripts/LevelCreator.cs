@@ -13,6 +13,7 @@ public class LevelCreator : MonoBehaviour
     public GameObject wonUI;
     public GameObject goal;
     private GameMap map;
+    private Level[] levels;
     private int currentLevel;
     private int maxLevel = 8;
 
@@ -21,6 +22,7 @@ public class LevelCreator : MonoBehaviour
     public Player player;
     // Start is called before the first frame update
     void Start(){
+        loadLevelObjects();
         this.map = GameMap.getInstance();
         this.objectList = new ArrayList();
         this.currentLevel = 1;
@@ -62,7 +64,7 @@ public class LevelCreator : MonoBehaviour
     }
 
     void createLevel(int levelNum){
-        JSON level = objectFromJson($"./Assets/LevelFiles/level{levelNum}.json");
+        Level level = levels[levelNum - 1];
         createPerimeter(level.goal.y);
         map.registerGoal(level.goal.x, level.goal.y);
         foreach(Item i in level.Mirrors){
@@ -140,24 +142,16 @@ public class LevelCreator : MonoBehaviour
         objectList = new ArrayList();
     }
 
-    private JSON objectFromJson(string filename){
-        JSON obj;
-        using (StreamReader r = new StreamReader(filename)){
-            JsonSerializer serializer = new JsonSerializer();
-            obj = (JSON)serializer.Deserialize(r, typeof(JSON));
-            return obj;
-        }
-    }
-
-    private class JSON{
-        public Item[] Mirrors;
-        public Item[] Blocks;
-        public Item player1;
-        public Item player2;
-        public Item goal;
-    }
-
-    public class Item{
-        public int x,y,color,id;
+    private void loadLevelObjects()
+    {
+        this.levels = new Level[this.maxLevel];
+        this.levels[0] = new Level1();
+        this.levels[1] = new Level2();
+        this.levels[2] = new Level3();
+        this.levels[3] = new Level4();
+        this.levels[4] = new Level5();
+        this.levels[5] = new Level6();
+        this.levels[6] = new Level7();
+        this.levels[7] = new Level8();
     }
 }

@@ -1,0 +1,75 @@
+public class Level8 : Level
+{
+    public Level8()
+    {
+        this.Mirrors = new Item[24];
+        this.Mirrors[0] = new Item(1, 12, -1);
+        this.Mirrors[1] = new Item(2, 12, -1);
+        this.Mirrors[2] = new Item(3, 12, -1);
+        this.Mirrors[3] = new Item(5, 12, -1);
+        this.Mirrors[4] = new Item(5, 15, -1);
+        this.Mirrors[5] = new Item(5, 16, -1);
+        this.Mirrors[6] = new Item(5, 17, -1);
+        this.Mirrors[7] = new Item(4, 13, 0);
+        this.Mirrors[8] = new Item(5, 11, -1);
+        this.Mirrors[9] = new Item(6, 11, -1);
+        this.Mirrors[10] = new Item(7, 11, -1);
+        this.Mirrors[11] = new Item(7, 12, -1);
+        this.Mirrors[12] = new Item(9, 12, -1);
+        this.Mirrors[13] = new Item(9, 13, -1);
+        this.Mirrors[14] = new Item(9, 14, -1);
+        this.Mirrors[15] = new Item(2, 7, -1);
+        this.Mirrors[16] = new Item(1, 7, -1);
+        this.Mirrors[17] = new Item(2, 2, -1);
+        this.Mirrors[18] = new Item(10, 1, 2);
+        this.Mirrors[19] = new Item(1, 3, 1);
+        this.Mirrors[20] = new Item(6, 13, 2);
+        this.Mirrors[21] = new Item(12, 11, 2);
+        this.Mirrors[22] = new Item(13, 6, 2);
+        this.Mirrors[23] = new Item(13, 16, 1);
+        this.Blocks = new Item[40];
+        this.Blocks[0] = new Item(21, 13, -1);
+        this.Blocks[1] = new Item(4, 12, -1);
+        this.Blocks[2] = new Item(5, 14, -1);
+        this.Blocks[3] = new Item(5, 13, 1);
+        this.Blocks[4] = new Item(1, 9, -1);
+        this.Blocks[5] = new Item(2, 9, -1);
+        this.Blocks[6] = new Item(3, 9, -1);
+        this.Blocks[7] = new Item(4, 9, -1);
+        this.Blocks[8] = new Item(5, 9, -1);
+        this.Blocks[9] = new Item(7, 9, -1);
+        this.Blocks[10] = new Item(8, 9, -1);
+        this.Blocks[11] = new Item(9, 9, -1);
+        this.Blocks[12] = new Item(19, 7, -1);
+        this.Blocks[13] = new Item(20, 7, -1);
+        this.Blocks[14] = new Item(21, 7, -1);
+        this.Blocks[15] = new Item(22, 7, -1);
+        this.Blocks[16] = new Item(23, 7, -1);
+        this.Blocks[17] = new Item(20, 2, -1);
+        this.Blocks[18] = new Item(21, 2, -1);
+        this.Blocks[19] = new Item(22, 2, -1);
+        this.Blocks[20] = new Item(25, 2, -1);
+        this.Blocks[21] = new Item(26, 2, -1);
+        this.Blocks[22] = new Item(27, 2, -1);
+        this.Blocks[23] = new Item(23, 13, -1);
+        this.Blocks[24] = new Item(17, 2, -1);
+        this.Blocks[25] = new Item(9, 1, 1);
+        this.Blocks[26] = new Item(21, 1, 2);
+        this.Blocks[27] = new Item(2, 3, -1);
+        this.Blocks[28] = new Item(2, 4, -1);
+        this.Blocks[29] = new Item(18, 3, 2);
+        this.Blocks[30] = new Item(2, 11, -1);
+        this.Blocks[31] = new Item(2, 13, -1);
+        this.Blocks[32] = new Item(2, 14, -1);
+        this.Blocks[33] = new Item(11, 2, -1);
+        this.Blocks[34] = new Item(12, 2, -1);
+        this.Blocks[35] = new Item(13, 2, -1);
+        this.Blocks[36] = new Item(14, 2, -1);
+        this.Blocks[37] = new Item(14, 3, -1);
+        this.Blocks[38] = new Item(14, 4, -1);
+        this.Blocks[39] = new Item(15, 4, -1);
+        this.player1 = new Item(2, 16, 1, 0);
+        this.player2 = new Item(18, 16, 2, 1);
+        this.goal = new Item(16, 3);
+    }
+}
