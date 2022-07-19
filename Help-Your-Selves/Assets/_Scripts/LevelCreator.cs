@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
+using System.Xml;
+using System.Xml.Serialization;
 
 public class LevelCreator : MonoBehaviour
 {
@@ -62,7 +64,7 @@ public class LevelCreator : MonoBehaviour
     }
 
     void createLevel(int levelNum){
-        JSON level = objectFromJson($"./Assets/LevelFiles/level{levelNum}.json");
+        XML level = ConvertXmlToObject($"./Assets/LevelFiles/level{1}.xml");
         createPerimeter(level.goal.y);
         map.registerGoal(level.goal.x, level.goal.y);
         foreach(Item i in level.Mirrors){
@@ -140,16 +142,25 @@ public class LevelCreator : MonoBehaviour
         objectList = new ArrayList();
     }
 
-    private JSON objectFromJson(string filename){
+    /*private JSON objectFromJson(string filename){
         JSON obj;
         using (StreamReader r = new StreamReader(filename)){
             JsonSerializer serializer = new JsonSerializer();
             obj = (JSON)serializer.Deserialize(r, typeof(JSON));
             return obj;
         }
+    }*/
+
+        public XML ConvertXmlToObject(string filename){
+        XML obj;
+        using (StreamReader r = new StreamReader(filename)){
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(XML));
+            obj = (XML)serializer.Deserialize(r);
+            return obj;
+        }
     }
 
-    private class JSON{
+    public class XML{
         public Item[] Mirrors;
         public Item[] Blocks;
         public Item player1;
