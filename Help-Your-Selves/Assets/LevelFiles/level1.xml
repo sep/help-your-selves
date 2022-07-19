@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <level>
+<MirroredBlocks>
   <Mirrors>
     <x>1</x>
     <y>2</y>
@@ -420,6 +421,7 @@
     <y>11</y>
     <color>-1</color>
   </Mirrors>
+  </MirroredBlocks>
   <Blocks/>
   <player1>
     <x>2</x>

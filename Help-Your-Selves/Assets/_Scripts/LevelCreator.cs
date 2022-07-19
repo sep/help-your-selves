@@ -67,14 +67,17 @@ public class LevelCreator : MonoBehaviour
         XML level = ConvertXmlToObject($"./Assets/LevelFiles/level{1}.xml");
         createPerimeter(level.goal.y);
         map.registerGoal(level.goal.x, level.goal.y);
-        foreach(Item i in level.Mirrors){
+        foreach(Item i in level.MirroredBlocks){
+            Debug.Log("its in");
             createMirror(i.x, i.y, i.color);
         }
-        foreach(Item i in level.Blocks){
+        /*foreach(Item i in level.Blocks){
             createBlock(this.block, i.x, i.y, i.color);
-        }
+        }*/
         Item p1 = level.player1;
         Item p2 = level.player2;
+        //Item mb = level.Mirrors;
+        //createMirror(mb.x, mb.y, mb.color);
         createPlayer(p1.x,p1.y,p1.id,p1.color);
         createPlayer(p2.x,p2.y,p2.id,p2.color);
     }
@@ -157,22 +160,33 @@ public class LevelCreator : MonoBehaviour
         xRoot.ElementName = "level";
         xRoot.IsNullable = true;
         using (StreamReader r = new StreamReader(filename)){
-            
             System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(XML),xRoot);
             obj = (XML)serializer.Deserialize(r);
             return obj;
         }
     }
 
-    public class XML{
-        public Item[] Mirrors;
-        public Item[] Blocks;
-        public Item player1;
-        public Item player2;
-        public Item goal;
-    }
-
-    public class Item{
-        public int x,y,color,id;
-    }
+//[Serializable()]
+//[System.Xml.Serialization.XmlRoot("level")]
+public class Item {
+    [XmlElement]
+    public int x;
+    [XmlElement]
+    public int y;
+    [XmlElement]
+    public int color;
+    [XmlElement]
+    public int id;
+}
+public class XML {
+    [XmlArray("MirroredBlocks")]
+    [XmlArrayItem("Mirrors", typeof(Item))]
+    public Item[] MirroredBlocks { get; set; }
+    [XmlElement]
+    public Item player1;
+    [XmlElement]
+    public Item player2;
+    [XmlElement]
+    public Item goal;
+}
 }
