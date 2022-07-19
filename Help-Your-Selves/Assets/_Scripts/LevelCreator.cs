@@ -153,8 +153,12 @@ public class LevelCreator : MonoBehaviour
 
         public XML ConvertXmlToObject(string filename){
         XML obj;
+        XmlRootAttribute xRoot = new XmlRootAttribute();
+        xRoot.ElementName = "level";
+        xRoot.IsNullable = true;
         using (StreamReader r = new StreamReader(filename)){
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(XML));
+            
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(XML),xRoot);
             obj = (XML)serializer.Deserialize(r);
             return obj;
         }
