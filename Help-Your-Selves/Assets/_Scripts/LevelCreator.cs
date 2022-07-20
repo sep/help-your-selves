@@ -64,16 +64,16 @@ public class LevelCreator : MonoBehaviour
     }
 
     void createLevel(int levelNum){
-        XML level = ConvertXmlToObject($"./Assets/LevelFiles/level{1}.xml");
+        XML level = ConvertXmlToObject($"./Assets/LevelFiles/level{levelNum}.xml");
         createPerimeter(level.goal.y);
         map.registerGoal(level.goal.x, level.goal.y);
         foreach(Item i in level.MirroredBlocks){
             Debug.Log("its in");
             createMirror(i.x, i.y, i.color);
         }
-        /*foreach(Item i in level.Blocks){
+        foreach(Item i in level.Block){
             createBlock(this.block, i.x, i.y, i.color);
-        }*/
+        }
         Item p1 = level.player1;
         Item p2 = level.player2;
         //Item mb = level.Mirrors;
@@ -119,6 +119,7 @@ public class LevelCreator : MonoBehaviour
 
     public void nextLevel(){
         this.currentLevel += 1;
+        Debug.Log(currentLevel);
         if(currentLevel > maxLevel) showWon();
         clear();
         createLevel(currentLevel);
@@ -182,6 +183,9 @@ public class XML {
     [XmlArray("MirroredBlocks")]
     [XmlArrayItem("Mirrors", typeof(Item))]
     public Item[] MirroredBlocks { get; set; }
+    [XmlArray("Block")]
+    [XmlArrayItem("Blocks", typeof(Item))]
+    public Item[] Block { get; set; }
     [XmlElement]
     public Item player1;
     [XmlElement]

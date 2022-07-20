@@ -32,6 +32,11 @@
     <color>-1</color>
   </Mirrors>
   <Mirrors>
+    <x>2</x>
+    <y>12</y>
+    <color>0</color>
+  </Mirrors>
+  <Mirrors>
     <x>3</x>
     <y>2</y>
     <color>-1</color>
@@ -153,6 +158,11 @@
   </Mirrors>
   <Mirrors>
     <x>6</x>
+    <y>6</y>
+    <color>0</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
     <y>7</y>
     <color>-1</color>
   </Mirrors>
@@ -283,6 +293,11 @@
   </Mirrors>
   <Mirrors>
     <x>10</x>
+    <y>5</y>
+    <color>0</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
     <y>7</y>
     <color>-1</color>
   </Mirrors>
@@ -300,6 +315,11 @@
     <x>10</x>
     <y>14</y>
     <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
+    <y>15</y>
+    <color>0</color>
   </Mirrors>
   <Mirrors>
     <x>10</x>
@@ -345,6 +365,11 @@
     <x>11</x>
     <y>14</y>
     <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>12</x>
+    <y>4</y>
+    <color>0</color>
   </Mirrors>
   <Mirrors>
     <x>12</x>
@@ -422,10 +447,10 @@
     <color>-1</color>
   </Mirrors>
   </MirroredBlocks>
-  <Block>
+<Block>
   <Blocks>
   </Blocks>
-  </Block>
+</Block>
   <player1>
     <x>2</x>
     <y>16</y>

@@ -3,7 +3,7 @@
 <MirroredBlocks>
   <Mirrors>
     <x>1</x>
-    <y>2</y>
+    <y>12</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -13,42 +13,67 @@
   </Mirrors>
   <Mirrors>
     <x>1</x>
+    <y>2</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>2</x>
+    <y>7</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>2</x>
+    <y>4</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>2</x>
+    <y>2</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>3</x>
+    <y>17</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>3</x>
+    <y>16</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>3</x>
+    <y>15</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>3</x>
+    <y>14</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>3</x>
+    <y>13</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>3</x>
     <y>12</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
-    <x>2</x>
-    <y>2</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>2</x>
-    <y>4</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>2</x>
-    <y>7</y>
+    <x>3</x>
+    <y>11</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>3</x>
-    <y>2</y>
+    <y>10</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>3</x>
-    <y>4</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>6</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>7</y>
+    <y>9</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -58,207 +83,182 @@
   </Mirrors>
   <Mirrors>
     <x>3</x>
-    <y>9</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>10</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>11</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>12</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>13</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>14</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>3</x>
-    <y>15</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>4</x>
-    <y>4</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>4</x>
     <y>7</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
-    <x>4</x>
-    <y>10</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>4</x>
-    <y>13</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>4</x>
-    <y>15</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>5</x>
-    <y>4</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>5</x>
-    <y>5</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>5</x>
-    <y>7</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>5</x>
-    <y>15</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>2</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>4</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>5</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>7</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>9</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>10</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>11</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>12</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>13</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>6</x>
-    <y>15</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>7</x>
-    <y>2</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>7</x>
-    <y>4</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>7</x>
-    <y>9</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>7</x>
-    <y>15</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>2</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>9</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>10</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>11</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>12</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>13</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>14</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>8</x>
-    <y>15</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>9</x>
-    <y>2</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>9</x>
+    <x>3</x>
     <y>6</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
-    <x>9</x>
+    <x>3</x>
+    <y>4</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>4</x>
+    <y>15</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>4</x>
+    <y>13</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>4</x>
+    <y>10</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>4</x>
     <y>7</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>4</x>
+    <y>4</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>5</x>
+    <y>15</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>5</x>
+    <y>7</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>5</x>
+    <y>5</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>5</x>
+    <y>4</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>15</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>12</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>11</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>10</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>9</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>7</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>6</y>
+    <color>2</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>5</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>4</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>3</y>
+    <color>1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>6</x>
+    <y>2</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>7</x>
+    <y>15</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>7</x>
+    <y>9</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>7</x>
+    <y>4</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>7</x>
+    <y>2</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>8</x>
+    <y>15</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>8</x>
+    <y>14</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>8</x>
+    <y>13</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>8</x>
+    <y>12</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>8</x>
+    <y>10</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>8</x>
+    <y>9</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>8</x>
+    <y>2</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>9</x>
+    <y>14</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>9</x>
+    <y>9</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -268,37 +268,27 @@
   </Mirrors>
   <Mirrors>
     <x>9</x>
-    <y>9</y>
+    <y>7</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>9</x>
-    <y>14</y>
+    <y>6</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
-    <x>10</x>
+    <x>9</x>
+    <y>5</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>9</x>
     <y>2</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>10</x>
-    <y>7</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>10</x>
-    <y>9</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>10</x>
-    <y>11</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>10</x>
-    <y>14</y>
+    <y>17</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -308,22 +298,57 @@
   </Mirrors>
   <Mirrors>
     <x>10</x>
-    <y>17</y>
+    <y>15</y>
+    <color>1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
+    <y>14</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
-    <x>11</x>
+    <x>10</x>
+    <y>11</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
+    <y>10</y>
+    <color>1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
+    <y>9</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
+    <y>7</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
+    <y>5</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>10</x>
     <y>2</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>11</x>
-    <y>3</y>
+    <y>14</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>11</x>
-    <y>4</y>
+    <y>11</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>11</x>
+    <y>7</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -333,27 +358,12 @@
   </Mirrors>
   <Mirrors>
     <x>11</x>
-    <y>7</y>
+    <y>3</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>11</x>
-    <y>11</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>11</x>
-    <y>14</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>12</x>
-    <y>7</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>12</x>
-    <y>11</y>
+    <y>2</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -362,8 +372,28 @@
     <color>-1</color>
   </Mirrors>
   <Mirrors>
-    <x>13</x>
+    <x>12</x>
+    <y>11</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>12</x>
+    <y>7</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>12</x>
     <y>4</y>
+    <color>2</color>
+  </Mirrors>
+  <Mirrors>
+    <x>12</x>
+    <y>3</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>13</x>
+    <y>11</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -373,27 +403,17 @@
   </Mirrors>
   <Mirrors>
     <x>13</x>
-    <y>11</y>
+    <y>5</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>14</x>
-    <y>4</y>
+    <y>15</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>14</x>
-    <y>10</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>14</x>
-    <y>11</y>
-    <color>-1</color>
-  </Mirrors>
-  <Mirrors>
-    <x>14</x>
-    <y>12</y>
+    <y>14</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
@@ -403,16 +423,26 @@
   </Mirrors>
   <Mirrors>
     <x>14</x>
-    <y>14</y>
+    <y>12</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
     <x>14</x>
-    <y>15</y>
+    <y>11</y>
     <color>-1</color>
   </Mirrors>
   <Mirrors>
-    <x>15</x>
+    <x>14</x>
+    <y>10</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>14</x>
+    <y>5</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>14</x>
     <y>4</y>
     <color>-1</color>
   </Mirrors>
@@ -421,13 +451,22 @@
     <y>11</y>
     <color>-1</color>
   </Mirrors>
+  <Mirrors>
+    <x>15</x>
+    <y>5</y>
+    <color>-1</color>
+  </Mirrors>
+  <Mirrors>
+    <x>15</x>
+    <y>4</y>
+    <color>-1</color>
+  </Mirrors>
   </MirroredBlocks>
   <Block>
-  <Blocks>
-  </Blocks>
+  <Blocks/>
   </Block>
   <player1>
-    <x>2</x>
+    <x>4</x>
     <y>16</y>
     <color>1</color>
     <id>0</id>
