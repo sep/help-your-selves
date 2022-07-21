@@ -75,8 +75,6 @@ public class LevelCreator : MonoBehaviour
             }
         Item p1 = level.player1;
         Item p2 = level.player2;
-        //Item mb = level.Mirrors;
-        //createMirror(mb.x, mb.y, mb.color);
         createPlayer(p1.x,p1.y,p1.id,p1.color);
         createPlayer(p2.x,p2.y,p2.id,p2.color);
     }
@@ -117,6 +115,7 @@ public class LevelCreator : MonoBehaviour
     }
 
     public void nextLevel(){
+        if (this.currentLevel == this.maxLevel) return;
         this.currentLevel += 1;
         Debug.Log(currentLevel);
         if(currentLevel > maxLevel) showWon();
@@ -126,6 +125,7 @@ public class LevelCreator : MonoBehaviour
     }
 
     public void prevLevel(){
+        if (this.currentLevel == 1) return;
         this.currentLevel -= 1;
         clear();
         createLevel(currentLevel);
@@ -136,7 +136,7 @@ public class LevelCreator : MonoBehaviour
         clear();
         createLevel(currentLevel);
     }
-    
+
     private void clear(){
         map.reset();
         foreach(GameObject g in objectList){
@@ -144,15 +144,6 @@ public class LevelCreator : MonoBehaviour
         }
         objectList = new ArrayList();
     }
-
-    /*private JSON objectFromJson(string filename){
-        JSON obj;
-        using (StreamReader r = new StreamReader(filename)){
-            JsonSerializer serializer = new JsonSerializer();
-            obj = (JSON)serializer.Deserialize(r, typeof(JSON));
-            return obj;
-        }
-    }*/
 
         public XML ConvertXmlToObject(string filename){
         XML obj;
@@ -166,8 +157,6 @@ public class LevelCreator : MonoBehaviour
         }
     }
 
-//[Serializable()]
-//[System.Xml.Serialization.XmlRoot("level")]
 public class Item {
     [XmlElement]
     public int x;

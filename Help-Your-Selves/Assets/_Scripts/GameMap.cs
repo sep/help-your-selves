@@ -49,8 +49,9 @@ public class GameMap
 
     public void registerPlayer(Player p){
         int x = p.getX();
+        int y = p.getY();
 
-        if(!isEmpty(x, p.getY())) Debug.LogError("Register player on taken position");
+        if(!isEmpty(x, y)) Debug.LogError($"Cannot register player at position ({x}, {y}) occupied by {this.getBlock(x, y)}");
 
         if(x < leftOffset){
             playerLeft = p;
