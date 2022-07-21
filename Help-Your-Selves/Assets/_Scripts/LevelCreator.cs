@@ -15,7 +15,6 @@ public class LevelCreator : MonoBehaviour
     public GameObject wonUI;
     public GameObject goal;
     private GameMap map;
-    private Level[] levels;
     private int currentLevel;
     private int maxLevel = 8;
 
@@ -24,7 +23,6 @@ public class LevelCreator : MonoBehaviour
     public Player player;
     // Start is called before the first frame update
     void Start(){
-        loadLevelObjects();
         this.map = GameMap.getInstance();
         this.objectList = new ArrayList();
         this.currentLevel = 1;
