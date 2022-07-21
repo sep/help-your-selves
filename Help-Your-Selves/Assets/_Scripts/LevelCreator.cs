@@ -68,12 +68,11 @@ public class LevelCreator : MonoBehaviour
         createPerimeter(level.goal.y);
         map.registerGoal(level.goal.x, level.goal.y);
         foreach(Item i in level.MirroredBlocks){
-            Debug.Log("its in");
             createMirror(i.x, i.y, i.color);
         }
         foreach(Item i in level.Block){
-            createBlock(this.block, i.x, i.y, i.color);
-        }
+             createBlock(this.block, i.x, i.y, i.color);
+            }
         Item p1 = level.player1;
         Item p2 = level.player2;
         //Item mb = level.Mirrors;
